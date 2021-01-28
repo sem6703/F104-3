@@ -1,19 +1,14 @@
-let siteCounter = (
-  function counterCreater() {
-    let index = 0; 
-    return function() {
-        return index++;
-    }
-  }
-)();
-let buttonCounter = (function counterCreater() {
-  let index = 0; 
+function counterCreater(initialIndex) {
+  let index = initialIndex; 
   return function() {
       return index++;
   }
-})();
+}
+let buttonCounter = counterCreater(1);
+console.log(buttonCounter());
 
-console.log(buttonCounter());
-console.log(buttonCounter());
-console.log(siteCounter());
-console.log(siteCounter());
+console.log((counterCreater(1))());
+
+// console.log(buttonCounter());
+// console.log(siteCounter());
+// console.log(siteCounter());
